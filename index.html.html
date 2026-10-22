@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lingkaran – Modul Pembelajaran Matematika</title>
+<style>
+:root{--bg:#f4f8fa;--card:#fff;--tx:#16294d;--mu:#5a6b85;--teal:#0e7c86;--or:#d98a2b;--ln:#d5e1e8;--soft:#e0f0f2;--ok:#1b7a4b;--bad:#b3362f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b33;--card:#182a4d;--tx:#e8eef7;--mu:#9fb0cb;--teal:#4cc3cf;--or:#f0ab5a;--ln:#2d4270;--soft:#1d3a52;--ok:#5fd39a;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#0f1b33;--card:#182a4d;--tx:#e8eef7;--mu:#9fb0cb;--teal:#4cc3cf;--or:#f0ab5a;--ln:#2d4270;--soft:#1d3a52;--ok:#5fd39a;--bad:#ff8a80}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 Georgia,"Times New Roman",serif}
+header{background:linear-gradient(160deg,#16294d,#0e7c86);color:#fff;text-align:center;padding:36px 18px 44px}
+header small{letter-spacing:.3em;font-size:12px;opacity:.85}
+header h1{font-size:clamp(38px,9vw,64px);margin:6px 0;letter-spacing:.04em}
+header p{margin:4px 0;opacity:.92}
+nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+nav a{color:#fff;border:1px solid #ffffff80;border-radius:99px;padding:6px 14px;text-decoration:none;font:14px system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:12px 16px 40px}
+section{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:18px;margin:18px 0}
+h2{margin:0 0 8px;color:var(--teal);font-size:22px;border-left:6px solid var(--or);padding-left:10px}
+h3{color:var(--teal);margin:18px 0 6px;font-size:18px}
+.box{background:var(--soft);border-radius:10px;padding:10px 14px;text-align:center;font-weight:bold;margin:10px 0}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.row>*{flex:1 1 280px}
+svg{width:100%;height:auto;max-width:420px;display:block;margin:auto;touch-action:none}
+svg text{font:bold 15px Georgia,serif;fill:var(--tx)}
+button,select,input{font:15px system-ui,sans-serif}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button,.btn{background:var(--soft);color:var(--tx);border:1px solid var(--ln);border-radius:99px;padding:8px 13px;cursor:pointer;min-height:40px}
+.chips button.on,.btn.pri{background:var(--teal);color:#fff;border-color:var(--teal)}
+.info{font:15px/1.5 system-ui,sans-serif;color:var(--mu);margin:8px 0}
+.out{font:15px/1.7 system-ui,sans-serif;background:var(--bg);border:1px solid var(--ln);border-radius:10px;padding:10px 12px}
+.out b{color:var(--or)}
+label{display:block;font:15px system-ui,sans-serif;margin:8px 0 2px}
+input[type=range]{width:100%;accent-color:var(--teal);height:32px}
+details{border:1px solid var(--ln);border-radius:10px;padding:8px 12px;margin:10px 0;background:var(--bg)}
+summary{cursor:pointer;font-weight:bold;color:var(--or)}
+.q{border-top:1px dashed var(--ln);padding:12px 0}
+.q input{width:130px;padding:8px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--tx)}
+.fb{font:15px/1.5 system-ui,sans-serif;margin-top:6px}
+.ok{color:var(--ok)}.no{color:var(--bad)}
+.hd{cursor:grab}.sm{max-width:260px}
+footer{text-align:center;color:var(--mu);font:14px system-ui,sans-serif;padding:20px}
+.f{fill:none;stroke:var(--tx);stroke-width:2}
+</style>
+</head>
+<body>
+<header>
+<small>MODUL PEMBELAJARAN MATEMATIKA</small>
+<h1>LINGKARAN</h1>
+<p>A. Lingkaran dan Busur Lingkaran · B. Panjang Busur, Luas Juring, dan Luas Tembereng</p>
+<p><b>Pembuat: Yudhi Wahyu Adi</b></p>
+<nav><a href="#unsur">Unsur</a><a href="#sudut">Sudut</a><a href="#busur">Busur · Juring · Tembereng</a><a href="#latihan">Latihan Soal</a></nav>
+</header>
+<main>
+
+<section id="unsur">
+<h2>1. Pengertian dan Unsur Lingkaran</h2>
+<p>Lingkaran adalah kumpulan titik-titik pada bidang datar yang memiliki jarak yang sama terhadap suatu titik pusat. Ketuk nama unsur di bawah untuk menyorotnya pada gambar.</p>
+<div class="row">
+<svg id="s1" viewBox="0 0 300 280" role="img" aria-label="Unsur-unsur lingkaran"></svg>
+<div><div class="chips" id="c1"></div><p class="info" id="d1">Pilih salah satu unsur.</p></div>
+</div>
+</section>
+
+<section id="sudut">
+<h2>2. Sudut Pusat dan Sudut Keliling</h2>
+<p>Sudut pusat dibentuk oleh pusat lingkaran dan dua titik pada busur; sudut keliling dibentuk oleh tiga titik pada lingkaran. <b>Geser titik A, B, atau C</b> pada lingkaran dan perhatikan hubungannya.</p>
+<div class="box">Sudut pusat = 2 × sudut keliling</div>
+<svg id="s2" viewBox="0 0 300 280" role="img" aria-label="Sudut pusat dan sudut keliling interaktif"></svg>
+<div class="out" id="o2"></div>
+<div class="chips" style="margin-top:10px"><button id="b2a">AB menjadi diameter</button><button id="b2b">Atur ulang</button></div>
+<h3>Sifat-sifat</h3>
+<p class="info"><b>a. Sudut keliling yang menghadap diameter</b> selalu siku-siku (90°). Tekan “AB menjadi diameter” di atas untuk mencobanya.</p><svg class="sm" viewBox="0 0 300 260" role="img" aria-label="Sudut keliling menghadap diameter"><circle class="f" cx="150" cy="140" r="100"/><line x1="50" y1="140" x2="250" y2="140" stroke="#1b9a5a" stroke-width="3"/><path d="M50 140L115.8 46L250 140" fill="none" stroke="#e03a3a" stroke-width="3"/><path d="M107.8 57.4L119.3 65.4L127.3 54" fill="none" stroke="#e03a3a" stroke-width="2"/><circle cx="150" cy="140" r="4"/><text x="145" y="160">O</text><text x="28" y="150">A</text><text x="256" y="150">B</text><text x="108" y="38">C</text><text x="112" y="100">90°</text><text x="150" y="252" style="text-anchor:middle;font-size:14px">∠ACB = 90° (AB diameter)</text></svg>
+<p class="info"><b>b. Sudut keliling yang menghadap busur yang sama</b> besarnya sama. Geser C di sepanjang busur besar pada gambar interaktif dan lihat nilainya tetap.</p><svg class="sm" viewBox="0 0 300 260" role="img" aria-label="Sudut keliling menghadap busur yang sama"><circle class="f" cx="150" cy="130" r="100"/><path d="M79.3 200.7A100 100 0 0 0 220.7 200.7" fill="none" stroke="#2f7be0" stroke-width="6"/><path d="M63.4 80L79.3 200.7M63.4 80L220.7 200.7" stroke="#1b9a5a" stroke-width="2" fill="none"/><path d="M150 30L79.3 200.7M150 30L220.7 200.7" stroke="#8a3fbf" stroke-width="2" fill="none"/><path d="M236.6 80L79.3 200.7M236.6 80L220.7 200.7" stroke="#e08a1b" stroke-width="2" fill="none"/><text x="60" y="216">A</text><text x="224" y="216">B</text><text x="44" y="78">C</text><text x="145" y="22">D</text><text x="244" y="78">E</text><text x="72" y="102">x</text><text x="146" y="62">x</text><text x="220" y="102">x</text><text x="150" y="252" style="text-anchor:middle;font-size:14px">∠ACB = ∠ADB = ∠AEB = x (busur AB sama)</text></svg>
+<p class="info"><b>c. Sudut-sudut keliling yang saling berhadapan</b> dalam segi empat tali busur jumlahnya 180°.</p><svg class="sm" viewBox="0 0 300 260" role="img" aria-label="Segi empat tali busur"><circle class="f" cx="150" cy="130" r="100"/><polygon points="100,43.4 63.4,180 226.6,194.3 200,43.4" fill="#0e7c8633" stroke="#e03a3a" stroke-width="3"/><text x="84" y="38">A</text><text x="46" y="196">B</text><text x="230" y="212">C</text><text x="204" y="38">D</text><text x="106" y="72" style="font-size:13px">105°</text><text x="80" y="170" style="font-size:13px">80°</text><text x="186" y="184" style="font-size:13px">75°</text><text x="164" y="72" style="font-size:13px">100°</text><text x="150" y="252" style="text-anchor:middle;font-size:14px">∠A + ∠C = 180° dan ∠B + ∠D = 180°</text></svg>
+<details><summary>Contoh</summary><svg id="g1" class="sm" viewBox="0 0 200 200" role="img" aria-label="Contoh sudut pusat"></svg><br>Sudut keliling ∠ACB = 55°. Maka sudut pusat ∠AOB = 2 × 55° = <b>110°</b>.</details>
+</section>
+
+<section id="busur">
+<h2>3. Panjang Busur, Luas Juring, dan Luas Tembereng</h2>
+<p>Ubah jari-jari dan sudut pusat θ. Busur, juring, dan tembereng ikut berubah.</p>
+<div class="row">
+<svg id="s3" viewBox="0 0 300 280" role="img" aria-label="Busur, juring, dan tembereng"></svg>
+<div>
+<label>Jari-jari r = <b id="rv"></b></label><input id="r" type="range" min="1" max="30" value="21">
+<label>Sudut pusat θ = <b id="tv"></b>°</label><input id="t" type="range" min="5" max="355" value="150">
+<label><input id="pi" type="checkbox" checked> pakai π = 22/7 (jika tidak, π = 3,14)</label>
+<div class="chips" style="margin:8px 0"><button data-p="21,150">Contoh 1</button><button data-p="7,90">Contoh tembereng</button></div>
+<div class="out" id="o3"></div>
+</div></div>
+<div class="box">∠AOB / 360° = panjang busur AB / 2πr = luas juring AOB / πr²</div>
+<div class="box">L<sub>tembereng</sub> = L<sub>juring AOB</sub> − L<sub>△AOB</sub></div>
+<details><summary>Contoh 1: panjang busur</summary><svg id="g2" class="sm" viewBox="0 0 200 200" role="img" aria-label="Contoh panjang busur"></svg><br>r = 21 cm, ∠AOB = 150°. 150/360 = busur / (2·22/7·21) → busur = 5/12 × 132 = <b>55 cm</b>.</details>
+<details><summary>Contoh 2: luas juring</summary><svg id="g3" class="sm" viewBox="0 0 200 200" role="img" aria-label="Contoh luas juring"></svg><br>∠AOD = 40°, ∠BOC = 100°, luas juring AOD = 50 cm². 40/100 = 50 / luas BOC → <b>125 cm²</b>.</details>
+<details><summary>Contoh 3: luas tembereng</summary><svg id="g4" class="sm" viewBox="0 0 200 200" role="img" aria-label="Contoh luas tembereng"></svg><br>r = 7 cm, ∠AOB = 90°. Juring = ¼ × 154 = 38,5; segitiga = ½ × 7 × 7 = 24,5. Tembereng = 38,5 − 24,5 = <b>14 cm²</b>.</details>
+</section>
+
+<section id="latihan">
+<h2>4. Latihan Soal</h2>
+<p class="info">Isi jawaban berupa angka saja (boleh pakai koma). Pembulatan 2 angka desimal.</p>
+<div id="qs"></div>
+</section>
+</main>
+<footer>Modul Matematika · Bagian 3 | Lingkaran · Pembuat: Yudhi Wahyu Adi</footer>
+
+<script>
+const $=s=>document.querySelector(s),R=Math.PI/180,f=(n,d=2)=>(+n.toFixed(d)).toString().replace('.',',');
+/* ---------- 1. Unsur ---------- */
+(function(){
+const cx=150,cy=140,r=110;
+const items=[
+['pusat','Titik Pusat','Titik tetap yang jaraknya sama ke semua titik pada lingkaran.'],
+['jari','Jari-jari','Garis dari titik pusat ke lingkaran.'],
+['dia','Diameter','Tali busur terpanjang yang melalui pusat; panjangnya 2 × jari-jari.'],
+['tali','Tali Busur','Garis lurus yang menghubungkan dua titik pada lingkaran.'],
+['apo','Apotema','Jarak terpendek dari pusat ke tali busur (tegak lurus tali busur).'],
+['busur','Busur','Garis lengkung yang merupakan bagian dari keliling lingkaran.'],
+['juring','Juring','Daerah yang dibatasi dua jari-jari dan satu busur.'],
+['temb','Tembereng','Daerah yang dibatasi satu busur dan satu tali busur.']];
+$('#s1').innerHTML=`<g class="el" id="e-temb"><path d="M65.15 210A110 110 0 0 0 234.85 210Z" fill="#e29f4e" opacity=".55"/></g>
+<g class="el" id="e-juring"><path d="M150 140L95 44.74A110 110 0 0 1 205 44.74Z" fill="#f2d24b" opacity=".6"/></g>
+<circle class="f" cx="150" cy="140" r="110"/>
+<g class="el" id="e-busur"><path d="M95 44.74A110 110 0 0 1 205 44.74" fill="none" stroke="#d98a2b" stroke-width="6"/></g>
+<g class="el" id="e-dia"><line x1="40" y1="140" x2="260" y2="140" stroke="#1b9a5a" stroke-width="3"/></g>
+<g class="el" id="e-tali"><line x1="65.15" y1="210" x2="234.85" y2="210" stroke="#7a4fb5" stroke-width="3"/></g>
+<g class="el" id="e-apo"><line x1="150" y1="140" x2="150" y2="210" stroke="#d98a2b" stroke-width="3"/></g>
+<g class="el" id="e-jari"><line x1="150" y1="140" x2="253.4" y2="102.4" stroke="#e03a3a" stroke-width="3"/></g>
+<g class="el" id="e-pusat"><circle cx="150" cy="140" r="6" fill="#e03a3a"/><text x="136" y="132">O</text></g>`;
+const c=$('#c1');
+items.forEach(([k,n,d],i)=>{const b=document.createElement('button');b.textContent=(i+1)+'. '+n;b.onclick=()=>{
+c.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+document.querySelectorAll('#s1 .el').forEach(e=>e.style.opacity=e.id==='e-'+k?1:.15);
+$('#d1').innerHTML='<b>'+n+'</b>: '+d};c.appendChild(b)});
+})();
+/* ---------- 2. Sudut ---------- */
+(function(){
+const cx=150,cy=140,r=110,svg=$('#s2');let a=150,b=30,c=270,act=null;
+const P=d=>[cx+r*Math.cos(d*R),cy-r*Math.sin(d*R)];
+function draw(){
+const A=P(a),B=P(b),C=P(c);
+let d=((a-b)%360+360)%360,cen=d>180?360-d:d;
+const v1=[A[0]-C[0],A[1]-C[1]],v2=[B[0]-C[0],B[1]-C[1]];
+const ins=Math.acos((v1[0]*v2[0]+v1[1]*v2[1])/(Math.hypot(...v1)*Math.hypot(...v2)))/R;
+const L=(p,q,col)=>`<line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" stroke="${col}" stroke-width="3"/>`;
+const H=(p,k,col)=>`<circle class="hd" data-k="${k}" cx="${p[0]}" cy="${p[1]}" r="9" fill="${col}" stroke="#fff" stroke-width="2"/><circle class="hd" data-k="${k}" cx="${p[0]}" cy="${p[1]}" r="22" fill="transparent"/>`;
+const T=(p,t)=>`<text x="${p[0]+(p[0]<cx?-20:10)}" y="${p[1]+(p[1]<cy?-10:20)}">${t}</text>`;
+svg.innerHTML=`<circle class="f" cx="${cx}" cy="${cy}" r="${r}"/>${L([cx,cy],A,'#e03a3a')}${L([cx,cy],B,'#e03a3a')}${L(C,A,'#1b9a5a')}${L(C,B,'#1b9a5a')}
+<circle cx="${cx}" cy="${cy}" r="5" fill="#e03a3a"/><text x="${cx+8}" y="${cy+20}">O</text>
+${H(A,'a','#d98a2b')}${H(B,'b','#d98a2b')}${H(C,'c','#0e7c86')}${T(A,'A')}${T(B,'B')}${T(C,'C')}`;
+let m=Math.abs(2*ins-cen)<.6?'<span class="ok">✓ Sudut pusat = 2 × sudut keliling</span>':'C berada di busur kecil AB, jadi ∠ACB = 180° − ½∠AOB. Geser C ke busur besar.';
+if(Math.abs(ins-90)<.6)m+='<br>AB adalah diameter, maka ∠ACB = 90°.';
+$('#o2').innerHTML=`Sudut pusat ∠AOB = <b>${f(cen,1)}°</b><br>Sudut keliling ∠ACB = <b>${f(ins,1)}°</b><br>2 × ∠ACB = <b>${f(2*ins,1)}°</b><br>${m}`}
+function pt(e){const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.getScreenCTM().inverse())}
+svg.addEventListener('pointerdown',e=>{const k=e.target.dataset&&e.target.dataset.k;if(k){act=k;svg.setPointerCapture(e.pointerId)}});
+svg.addEventListener('pointermove',e=>{if(!act)return;const p=pt(e),d=Math.atan2(-(p.y-cy),p.x-cx)/R;if(act==='a')a=d;else if(act==='b')b=d;else c=d;draw()});
+['pointerup','pointercancel'].forEach(n=>svg.addEventListener(n,()=>act=null));
+$('#b2a').onclick=()=>{b=a+180;draw()};
+$('#b2b').onclick=()=>{a=150;b=30;c=270;draw()};
+draw();
+})();
+/* ---------- 3. Busur, juring, tembereng ---------- */
+(function(){
+const cx=150,cy=140,R0=110;
+function draw(){
+const r=+$('#r').value,t=+$('#t').value,pi=$('#pi').checked?22/7:3.14;
+$('#rv').textContent=r+' cm';$('#tv').textContent=t;
+const p1=[cx+R0,cy],p2=[cx+R0*Math.cos(t*R),cy-R0*Math.sin(t*R)],lg=t>180?1:0;
+const arc=`A${R0} ${R0} 0 ${lg} 0 ${p2[0]} ${p2[1]}`;
+$('#s3').innerHTML=`<circle class="f" cx="${cx}" cy="${cy}" r="${R0}"/>
+<path d="M${cx} ${cy}L${p1} ${arc}Z" fill="#f2b35a" opacity=".7"/>
+<path d="M${p1} ${arc}Z" fill="#0e7c86" opacity=".75"/>
+<path d="M${p1} ${arc}" fill="none" stroke="#e03a3a" stroke-width="5"/>
+<line x1="${cx}" y1="${cy}" x2="${p1[0]}" y2="${p1[1]}" stroke="var(--tx)" stroke-width="2"/><line x1="${cx}" y1="${cy}" x2="${p2[0]}" y2="${p2[1]}" stroke="var(--tx)" stroke-width="2"/>
+<circle cx="${cx}" cy="${cy}" r="4"/><text x="${cx-16}" y="${cy+16}">O</text><text x="${p1[0]-12}" y="${p1[1]+20}">B</text><text x="${p2[0]+6}" y="${p2[1]-6}">A</text><text x="${cx+22}" y="${cy-8}" style="font-size:13px">${t}°</text>`;
+const arcL=t/360*2*pi*r,lj=t/360*pi*r*r,tri=.5*r*r*Math.sin(t*R);
+$('#o3').innerHTML=`Panjang busur = <b>${f(arcL)}</b> cm<br>Luas juring = <b>${f(lj)}</b> cm²<br>Luas segitiga AOB = <b>${f(tri)}</b> cm²<br>Luas tembereng = <b>${f(lj-tri)}</b> cm²<br><span style="color:var(--mu)">Merah: busur · Oranye: juring · Hijau-biru: tembereng</span>`}
+['r','t','pi'].forEach(i=>$('#'+i).oninput=draw);
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{const[x,y]=b.dataset.p.split(',');$('#r').value=x;$('#t').value=y;draw()});
+draw();
+})();
+/* ---------- Gambar contoh ---------- */
+(function(){
+const P=(d,r=80)=>[(100+r*Math.cos(d*R)).toFixed(1),(100-r*Math.sin(d*R)).toFixed(1)];
+const S=(a,b,fl)=>`<path d="M100 100L${P(a)}A80 80 0 ${b-a>180?1:0} 0 ${P(b)}Z" fill="${fl}"/>`;
+const Ln=(d,c='var(--tx)')=>`<line x1="100" y1="100" x2="${P(d)[0]}" y2="${P(d)[1]}" stroke="${c}" stroke-width="2"/>`;
+const T=(x,y,t,s=13)=>`<text x="${x}" y="${y}" style="font-size:${s}px;text-anchor:middle">${t}</text>`;
+const Tp=(d,r,t,s=11)=>{const p=P(d,r);return T(p[0],p[1],t,s)};
+const ci='<circle class="f" cx="100" cy="100" r="80"/>',O='<circle cx="100" cy="100" r="3"/>';
+$('#g1').innerHTML=ci+Ln(215,'#e03a3a')+Ln(325,'#e03a3a')+`<path d="M${P(215)}L${P(90)}L${P(325)}" fill="none" stroke="#1b9a5a" stroke-width="2"/>`+O+Tp(90,92,'C')+Tp(215,92,'A')+Tp(325,92,'B')+T(100,126,'110°',12)+T(100,52,'55°',12)+T(100,114,'O',12);
+$('#g2').innerHTML=S(0,150,'#f2b35a')+ci+Ln(0)+Ln(150)+`<path d="M${P(0)}A80 80 0 0 0 ${P(150)}" fill="none" stroke="#e03a3a" stroke-width="4"/>`+O+Tp(75,40,'150°',12)+T(140,116,'r = 21 cm',11)+Tp(0,92,'B')+Tp(150,92,'A')+T(100,114,'O',12);
+$('#g3').innerHTML=S(0,40,'#f2b35a')+S(160,260,'#7cc4f0')+ci+Ln(0)+Ln(40)+Ln(160)+Ln(260)+O+Tp(20,40,'40°')+Tp(20,62,'50 cm²',10)+Tp(210,40,'100°')+Tp(210,62,'? cm²',10)+Tp(0,92,'A')+Tp(40,92,'D')+Tp(160,92,'C')+Tp(260,92,'B');
+$('#g4').innerHTML=S(0,90,'#f2b35a')+`<path d="M${P(0)}A80 80 0 0 0 ${P(90)}Z" fill="#0e7c86" opacity=".8"/>`+`<polygon points="100,100 ${P(0)} ${P(90)}" fill="#ffffff66" stroke="var(--tx)" stroke-width="2"/>`+ci+`<path d="M112 100L112 88L100 88" fill="none" stroke="var(--tx)"/>`+O+T(100,14,'A')+T(188,104,'B')+T(86,116,'O',12)+T(140,116,'7 cm',11)+T(82,62,'7 cm',11)+Tp(45,70,'tembereng',10);
+})();
+/* ---------- 4. Latihan ---------- */
+(function(){
+const Q=[
+['1. Sudut keliling ∠DFE = 70° dan sudut pusat ∠DPE = (5x − 10)°. Tentukan nilai x.',30,.01,'','Sudut pusat = 2 × 70° = 140°. 5x − 10 = 140 → 5x = 150 → x = 30.'],
+['2. ABCD segi empat tali busur; garis EF melalui A dan B. ∠DAB = 84° dan ∠ABC = 78°. Tentukan selisih ∠DAE dan ∠CBF (derajat).',6,.01,'°','∠DAE = 180° − 84° = 96°; ∠CBF = 180° − 78° = 102°. Selisih = 6°.'],
+['3. AB diameter, ∠ABC = 60°, C pada lingkaran. Tentukan ∠BAC.',30,.01,'°','∠ACB = 90° (menghadap diameter). ∠BAC = 180° − 90° − 60° = 30°.'],
+['4. Dari soal nomor 3, AC = 8 cm. Tentukan panjang OC (cm, 2 desimal).',4.62,.03,' cm','AC = AB · sin 60° → AB = 16/√3. OC = jari-jari = ½AB = 8/√3 = 8√3/3 ≈ 4,62 cm.'],
+['5. Jari-jari 10 cm, tali busur AB = 16 cm. Tentukan panjang apotema (cm).',6,.01,' cm','Setengah tali busur = 8. Apotema = √(10² − 8²) = √36 = 6 cm.'],
+['6. ∠AOB = 72°, jari-jari 21 cm (π = 22/7). Tentukan luas juring AOB (cm²).',277.2,.2,' cm²','72/360 × 22/7 × 21 × 21 = 1/5 × 1.386 = 277,2 cm².'],
+['7. ∠AOB = 105°, jari-jari 12 cm (π = 22/7). Tentukan panjang busur AB (cm).',22,.1,' cm','105/360 × 2 × 22/7 × 12 = 22 cm.'],
+['8. Jari-jari 10 cm dan ∠AOB = 60° (tali busur AB = 10 cm). Tentukan luas tembereng (cm², π = 3,14).',9.06,.1,' cm²','Juring = 1/6 × 3,14 × 100 = 52,33; segitiga sama sisi = ¼√3 × 100 ≈ 43,30. Tembereng ≈ 9,03 cm² (dengan π = 3,1416: 9,06).'],
+['9. Taman jari-jari 7 m, juring mawar 60°. Berapa luas juring (m², π = 22/7)?',25.67,.05,' m²','60/360 × 22/7 × 49 = 154/6 ≈ 25,67 m².'],
+['10. Dari soal nomor 9, berapa panjang pagar yang mengelilingi juring tersebut (m)?',21.33,.05,' m','Keliling juring = 2r + busur = 14 + 1/6 × 44 = 14 + 7,33 ≈ 21,33 m.']];
+$('#qs').innerHTML=Q.map((q,i)=>`<div class="q"><div>${q[0]}</div><input id="i${i}" inputmode="decimal" placeholder="jawaban"> <button class="btn pri" data-i="${i}">Cek</button><div class="fb" id="f${i}"></div></div>`).join('');
+document.querySelectorAll('.q .btn').forEach(b=>b.onclick=()=>{
+const i=+b.dataset.i,q=Q[i],v=parseFloat($('#i'+i).value.replace(',','.')),el=$('#f'+i);
+if(isNaN(v)){el.innerHTML='Isi jawaban dulu.';return}
+const ok=Math.abs(v-q[1])<=q[2];
+el.innerHTML=(ok?'<span class="ok">✓ Benar!</span>':'<span class="no">✗ Belum tepat, coba lagi.</span>')+`<details><summary>Lihat pembahasan</summary>${q[4]}<br>Jawaban: <b>${f(q[1])}${q[3]}</b></details>`});
+})();
+</script>
+</body>
+</html>
